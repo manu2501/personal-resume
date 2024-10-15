@@ -21,6 +21,5 @@ The resume uses the following external resources:
 
 For any inquiries, please contact Manoj Kumar Kothuru at:
 - Email: manoj2rox@gmail.com
-- Phone: +91-7013029104
 - [GitHub](https://www.github.com/manu2501)
 - [LinkedIn](https://linkedin.com/in/manoj2rox)
