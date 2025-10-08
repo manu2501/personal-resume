@@ -46,9 +46,83 @@
             }
         }
     </style>
-</head>
+    <style>
+        /* Black & white palette for a high-contrast professional look */
+        :root{
+            --bg: #ffffff; /* white page background ideal for resumes/print */
+            --card: #ffffff; /* content card background (same as page to keep flat look) */
+            --text: #0f1720; /* charcoal primary text — softer than pure black */
+            --muted: #6b6b6b; /* muted gray for secondary info */
+            --primary: #1f2937; /* dark charcoal for headings */
+            --accent: #111827; /* deep charcoal for badges/strong accents */
+            --accent-dark: #374151; /* hover - slightly lighter charcoal */
+            --soft-border: #e5e7eb; /* light gray borders */
+        }
 
-<body class="container max-w-8xl mx-auto text-sm font-sans text-gray-800"></body>
+        body {
+            background: var(--bg);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Override Tailwind purple utilities to neutral black/gray so HTML doesn't need changing */
+        .text-purple-500 { color: var(--primary) !important; }
+        .bg-purple-500 { background-color: var(--accent) !important; }
+
+        /* Header: use a subtle monochrome gradient to keep visual hierarchy without color */
+        header {
+            /* subtle charcoal gradient for header — less harsh than pure black */
+            background: linear-gradient(90deg, #111827 0%, #1f2937 100%) !important;
+            color: #fff !important;
+        }
+
+        /* Section headings */
+        h2 {
+            color: var(--primary) !important;
+            border-bottom-color: var(--soft-border) !important;
+        }
+
+        /* Links */
+        a { color: var(--primary); }
+    a:hover { color: var(--accent-dark); text-decoration: underline; }
+
+        /* Skill badges: monochrome badges */
+        .bg-purple-500.text-white {
+            background-color: var(--accent) !important;
+            color: #fff !important;
+            box-shadow: 0 1px 2px rgba(15,23,32,0.06);
+        }
+
+        /* Slight card feel for major sections to improve readability */
+        .container section { padding: 0.5rem 0; }
+
+        /* Make contact and header text clearer on small screens */
+        header p, header a span { color: rgba(255,255,255,0.95); }
+
+        /* Muted text */
+        .text-gray-700 { color: var(--muted) !important; }
+        /* Social link visibility in header */
+        header .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            background: rgba(0,0,0,0.12); /* subtle dark backdrop for contrast */
+            color: #fff !important;
+        }
+
+        header .social-link i { font-size: 1.125rem; /* slightly larger */ }
+
+        header .social-link:hover {
+            background: rgba(0,0,0,0.18);
+            text-decoration: none;
+        }
+    </style>
+</head>
+ 
+<body class="container max-w-8xl mx-auto text-sm font-sans text-gray-800">
 <header
     class="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded mb-6 flex flex-col md:flex-row md:items-center md:justify-between shadow-lg">
     <div>
@@ -57,11 +131,11 @@
         <p class="text-sm">manoj2rox@gmail.com | +91-7013029104</p>
     </div>
     <div class="mt-4 md:mt-0 flex space-x-6">
-        <a href="https://www.github.com/manu2501" target="_blank" class="hover:underline flex items-center space-x-2">
+        <a href="https://www.github.com/manu2501" target="_blank" class="hover:underline flex items-center space-x-2 social-link">
             <i class="fab fa-github text-xl"></i>
             <span class="text-lg">manu2501</span>
         </a>
-        <a href="https://linkedin.com/in/manoj2rox" target="_blank" class="hover:underline flex items-center space-x-2">
+        <a href="https://linkedin.com/in/manoj2rox" target="_blank" class="hover:underline flex items-center space-x-2 social-link">
             <i class="fab fa-linkedin text-xl"></i>
             <span class="text-lg">manoj2rox</span>
         </a>
