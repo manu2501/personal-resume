@@ -48,15 +48,23 @@
     </style>
     <style>
         /* Black & white palette for a high-contrast professional look */
-        :root{
-            --bg: #ffffff; /* white page background ideal for resumes/print */
-            --card: #ffffff; /* content card background (same as page to keep flat look) */
-            --text: #0f1720; /* charcoal primary text — softer than pure black */
-            --muted: #6b6b6b; /* muted gray for secondary info */
-            --primary: #1f2937; /* dark charcoal for headings */
-            --accent: #111827; /* deep charcoal for badges/strong accents */
-            --accent-dark: #374151; /* hover - slightly lighter charcoal */
-            --soft-border: #e5e7eb; /* light gray borders */
+        :root {
+            --bg: #ffffff;
+            /* white page background ideal for resumes/print */
+            --card: #ffffff;
+            /* content card background (same as page to keep flat look) */
+            --text: #0f1720;
+            /* charcoal primary text — softer than pure black */
+            --muted: #6b6b6b;
+            /* muted gray for secondary info */
+            --primary: #1f2937;
+            /* dark charcoal for headings */
+            --accent: #111827;
+            /* deep charcoal for badges/strong accents */
+            --accent-dark: #374151;
+            /* hover - slightly lighter charcoal */
+            --soft-border: #e5e7eb;
+            /* light gray borders */
         }
 
         body {
@@ -67,8 +75,13 @@
         }
 
         /* Override Tailwind purple utilities to neutral black/gray so HTML doesn't need changing */
-        .text-purple-500 { color: var(--primary) !important; }
-        .bg-purple-500 { background-color: var(--accent) !important; }
+        .text-purple-500 {
+            color: var(--primary) !important;
+        }
+
+        .bg-purple-500 {
+            background-color: var(--accent) !important;
+        }
 
         /* Header: use a subtle monochrome gradient to keep visual hierarchy without color */
         header {
@@ -84,24 +97,38 @@
         }
 
         /* Links */
-        a { color: var(--primary); }
-    a:hover { color: var(--accent-dark); text-decoration: underline; }
+        a {
+            color: var(--primary);
+        }
+
+        a:hover {
+            color: var(--accent-dark);
+            text-decoration: underline;
+        }
 
         /* Skill badges: monochrome badges */
         .bg-purple-500.text-white {
             background-color: var(--accent) !important;
             color: #fff !important;
-            box-shadow: 0 1px 2px rgba(15,23,32,0.06);
+            box-shadow: 0 1px 2px rgba(15, 23, 32, 0.06);
         }
 
         /* Slight card feel for major sections to improve readability */
-        .container section { padding: 0.5rem 0; }
+        .container section {
+            padding: 0.5rem 0;
+        }
 
         /* Make contact and header text clearer on small screens */
-        header p, header a span { color: rgba(255,255,255,0.95); }
+        header p,
+        header a span {
+            color: rgba(255, 255, 255, 0.95);
+        }
 
         /* Muted text */
-        .text-gray-700 { color: var(--muted) !important; }
+        .text-gray-700 {
+            color: var(--muted) !important;
+        }
+
         /* Social link visibility in header */
         header .social-link {
             display: inline-flex;
@@ -109,240 +136,246 @@
             gap: 0.5rem;
             padding: 0.25rem 0.5rem;
             border-radius: 0.375rem;
-            background: rgba(0,0,0,0.12); /* subtle dark backdrop for contrast */
+            background: rgba(0, 0, 0, 0.12);
+            /* subtle dark backdrop for contrast */
             color: #fff !important;
         }
 
-        header .social-link i { font-size: 1.125rem; /* slightly larger */ }
+        header .social-link i {
+            font-size: 1.125rem;
+            /* slightly larger */
+        }
 
         header .social-link:hover {
-            background: rgba(0,0,0,0.18);
+            background: rgba(0, 0, 0, 0.18);
             text-decoration: none;
         }
     </style>
 </head>
- 
+
 <body class="container max-w-8xl mx-auto text-sm font-sans text-gray-800">
-<header
-    class="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded mb-6 flex flex-col md:flex-row md:items-center md:justify-between shadow-lg">
-    <div>
-        <h1 class="text-3xl font-bold">Manoj Kumar Kothuru</h1>
-        <p class="text-lg">Lead Product Engineer</p>
-        <p class="text-sm">manoj2rox@gmail.com | +91-7013029104</p>
-    </div>
-    <div class="mt-4 md:mt-0 flex space-x-6">
-        <a href="https://www.github.com/manu2501" target="_blank" class="hover:underline flex items-center space-x-2 social-link">
-            <i class="fab fa-github text-xl"></i>
-            <span class="text-lg">manu2501</span>
-        </a>
-        <a href="https://linkedin.com/in/manoj2rox" target="_blank" class="hover:underline flex items-center space-x-2 social-link">
-            <i class="fab fa-linkedin text-xl"></i>
-            <span class="text-lg">manoj2rox</span>
-        </a>
-    </div>
-</header>
+    <header
+        class="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded mb-6 flex flex-col md:flex-row md:items-center md:justify-between shadow-lg">
+        <div>
+            <h1 class="text-3xl font-bold">Manoj Kumar Kothuru</h1>
+            <p class="text-lg">Lead Product Engineer</p>
+            <p class="text-sm">manoj2rox@gmail.com | +91-7013029104</p>
+        </div>
+        <div class="mt-4 md:mt-0 flex space-x-6">
+            <a href="https://www.github.com/manu2501" target="_blank"
+                class="hover:underline flex items-center space-x-2 social-link">
+                <i class="fab fa-github text-xl"></i>
+                <span class="text-lg">manu2501</span>
+            </a>
+            <a href="https://linkedin.com/in/manoj2rox" target="_blank"
+                class="hover:underline flex items-center space-x-2 social-link">
+                <i class="fab fa-linkedin text-xl"></i>
+                <span class="text-lg">manoj2rox</span>
+            </a>
+        </div>
+    </header>
 
-<section class="mb-6">
-    <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Objective</h2>
-    <p class="text-gray-700">As a Lead Product Engineer, I aim to leverage my software development and leadership
-        skills to drive innovative solutions. I am committed to continuous learning and contributing to impactful
-        projects. My goal is to enhance product quality and efficiency through effective collaboration and
-        technology.</p>
-</section>
+    <section class="mb-6">
+        <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Objective</h2>
+        <p class="text-gray-700">As a Lead Product Engineer, I aim to leverage my software development and leadership
+            skills to drive innovative solutions. I am committed to continuous learning and contributing to impactful
+            projects. My goal is to enhance product quality and efficiency through effective collaboration and
+            technology.</p>
+    </section>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-    <!-- Intro -->
-    <div class="md:col-span-2">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Intro -->
+        <div class="md:col-span-2">
 
-        <section class="mb-6">
-            <!-- Experience section -->
-            <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Experience</h2>
-            <div class="mb-4">
-                <h3 class="font-bold">Lead Product Engineer - Harman International</h3>
-                <p class="text-sm italic">Bengaluru, India | November 2021 - Present</p>
-                <ul class="list-disc ml-5 mt-2">
-                    <p class="text-sm font-semibold">Automation Hub</p>
-                    <ul class="list-disc ml-5 ">
-                        <li class="text-sm">Leading the team using Agile methodologies, conducting daily scrum
-                            meetings, and collaborating with cross-functional teams to ensure smooth workflows,
-                            timely delivery of services, and adherence to project timelines.</li>
-                        <li class="text-sm">I have designed and implemented Rest APIs to facilitate seamless
-                            communication and data exchange.</li>
-                        <li class="text-sm">These Rest APIs serve as a crucial bridge for integrating various
-                            systems and applications within the service request processing workflow.</li>
-                        <li class="text-sm">The portal serves as a centralized platform, allowing users to submit,
-                            track, and manage service requests in a streamlined manner.</li>
-                        <li class="text-sm">By combining Rest APIs and the portal, I have contributed to creating a
-                            comprehensive solution that enhances accessibility and transparency in service request
-                            management.</li>
-                        <li class="text-sm">Automation is also achieved through the use of PowerShell scripts and
-                            Python scripts, enabling quick and accurate service request handling.</li>
-                        <li class="text-sm">Additionally, we utilize Robotic Process Automation (RPA) to further
-                            enhance the automation capabilities in dealing with service requests.</li>
-                        <li class="text-sm">The automated workflow ensures a swift and standardized response to
-                            service requests, improving overall efficiency.</li>
-                        <li class="text-sm">My responsibilities include maintaining and optimizing the automation
-                            scripts to adapt to evolving requirements.</li>
+            <section class="mb-6">
+                <!-- Experience section -->
+                <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Experience</h2>
+                <div class="mb-4">
+                    <h3 class="font-bold">Lead Product Engineer - Harman International</h3>
+                    <p class="text-sm italic">Bengaluru, India | November 2021 - Present</p>
+                    <ul class="list-disc ml-5 mt-2">
+                        <p class="text-sm font-semibold">Automation Hub</p>
+                        <ul class="list-disc ml-5 ">
+                            <li class="text-sm">Leading the team using Agile methodologies, conducting daily scrum
+                                meetings, and collaborating with cross-functional teams to ensure smooth workflows,
+                                timely delivery of services, and adherence to project timelines.</li>
+                            <li class="text-sm">I have designed and implemented Rest APIs to facilitate seamless
+                                communication and data exchange.</li>
+                            <li class="text-sm">These Rest APIs serve as a crucial bridge for integrating various
+                                systems and applications within the service request processing workflow.</li>
+                            <li class="text-sm">The portal serves as a centralized platform, allowing users to submit,
+                                track, and manage service requests in a streamlined manner.</li>
+                            <li class="text-sm">By combining Rest APIs and the portal, I have contributed to creating a
+                                comprehensive solution that enhances accessibility and transparency in service request
+                                management.</li>
+                            <li class="text-sm">Automation is also achieved through the use of PowerShell scripts and
+                                Python scripts, enabling quick and accurate service request handling.</li>
+                            <li class="text-sm">Additionally, we utilize Robotic Process Automation (RPA) to further
+                                enhance the automation capabilities in dealing with service requests.</li>
+                            <li class="text-sm">The automated workflow ensures a swift and standardized response to
+                                service requests, improving overall efficiency.</li>
+                            <li class="text-sm">My responsibilities include maintaining and optimizing the automation
+                                scripts to adapt to evolving requirements.</li>
+                        </ul>
+                        <p class="text-sm font-semibold mt-2">Power BI</p>
+                        <ul class="list-disc ml-5">
+                            <li class="text-sm">Created comprehensive dashboards for various departments, including
+                                Project Management and E-commerce, to facilitate data-driven strategies and performance
+                                tracking.
+                            </li>
+                            <li class="text-sm">Leveraged Snowflake and advanced connectors to integrate diverse data
+                                sources, ensuring seamless and efficient data visualization in Power BI.</li>
+                        </ul>
                     </ul>
-                    <p class="text-sm font-semibold mt-2">Power BI</p>
-                    <ul class="list-disc ml-5">
-                        <li class="text-sm">Created comprehensive dashboards for various departments, including
-                            Project Management and E-commerce, to facilitate data-driven strategies and performance
-                            tracking.
-                        </li>
-                        <li class="text-sm">Leveraged Snowflake and advanced connectors to integrate diverse data
-                            sources, ensuring seamless and efficient data visualization in Power BI.</li>
+                </div>
+                <div>
+                    <h3 class="font-bold">Application Developer - Wipro Technologies</h3>
+                    <p class="text-sm italic">Chennai, India | August 2018 - November 2021</p>
+                    <ul class="list-disc ml-5 mt-2">
+                        <p class="text-sm font-semibold">Infrastructure Analytics</p>
+                        <ul class="list-disc ml-5">
+                            <li class="text-sm">Conducting thorough analysis and generating detailed reports to
+                                determine optimal times for scaling the VDI (Virtual Desktop Infrastructure) up or down,
+                                ensuring the best possible user experience.</li>
+                            <li class="text-sm">Gathering data from various PODS or clusters across different regions,
+                                while adhering to country-specific policies. This comprehensive data collection and
+                                policy compliance guide our decisions on infrastructure management.</li>
+                        </ul>
+                        <p class="text-sm font-semibold mt-2">Dashboard for monitoring live metrics</p>
+                        <ul class="list-disc ml-5">
+                            <li class="text-sm">Developed interactive dashboards to analyze live server metrics,
+                                enabling real-time monitoring of load capacity and infrastructure usage.</li>
+                            <li class="text-sm">Utilized these dashboards for basic troubleshooting and performance
+                                optimization of machines.</li>
+                            <li class="text-sm">Implemented using Python frameworks, MySQL for database management, and
+                                React for creating dynamic dashboards and consuming REST APIs.</li>
+                        </ul>
+                        <p class="text-sm font-semibold mt-2">Development of tools and utilities</p>
+                        <ul class="list-disc ml-5">
+                            <li class="text-sm">Developed a suite of tools and utilities to streamline IT operations and
+                                address infrastructure-related issues for BAU (Business As Usual) activities.</li>
+                            <li class="text-sm">Utilized a diverse tech stack including PowerShell, Python, and React to
+                                create robust and efficient solutions.</li>
+                            <li class="text-sm">Implemented automation workflows to minimize manual intervention,
+                                significantly reducing error rates and improving operational efficiency.</li>
+                            <li class="text-sm">Designed user-friendly interfaces and dashboards to enhance usability
+                                and provide real-time insights into system performance and issues.</li>
+                            <li class="text-sm">Collaborated with cross-functional teams to identify pain points and
+                                develop targeted solutions that address specific operational challenges.</li>
+                        </ul>
+                        <p class="text-sm font-semibold mt-2">Creating pipelines to automate the workflows</p>
+                        <ul class="list-disc ml-5">
+                            <li class="text-sm">Analyzed job streams and trends to identify opportunities for improving
+                                stability and performance. Developed and enhanced database processes using SQL and
+                                PSSQL.
+                            </li>
+                            <li class="text-sm">Published processed and analyzed data for reporting purposes, ensuring
+                                accurate and timely information dissemination.</li>
+                            <li class="text-sm">Created scripts in Python and PowerShell to automate VDI services,
+                                including creation, deletion, and other workflows, enhancing efficiency and reducing
+                                manual intervention.
+                            </li>
+                            <li class="text-sm">Managed problem resolution for batch execution outages and recovery,
+                                ensuring minimal downtime and maintaining service continuity.</li>
+                        </ul>
                     </ul>
+                </div>
+            </section>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="md:col-span-1">
+
+            <section class="mb-6">
+                <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Education</h2>
+                <p><strong>Bachelor of Technology</strong></p>
+                <p class="font-semibold">Computer Science and Engineering</p>
+                <p class="text-xs">JNTUA, Anantapuram (2014-2018)</p>
+            </section>
+            <!-- Skills Section -->
+            <section class="mb-6">
+                <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Technical Skills</h2>
+
+                <!-- Programming Languages -->
+                <h3 class="font-semibold mt-4">Programming Languages</h3>
+                <div class="flex flex-wrap gap-2 mt-1 mb-2 ">
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Python</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">JavaScript</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">TypeScript</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">PowerShell</span>
+                </div>
+
+                <!-- Frameworks and Libraries -->
+                <h3 class="font-semibold">Frameworks and Libraries</h3>
+                <div class="flex flex-wrap gap-2 mt-1 mb-2">
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">FastAPI</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Streamlit</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Flask</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">ReactJs</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">NextJs</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">ExpressJs</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Pandas</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">NumPy</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Matplotlib</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Seaborn</span>
+                </div>
+
+                <!-- Databases -->
+                <h3 class="font-semibold">Databases</h3>
+                <div class="flex flex-wrap gap-2 mt-1 mb-2">
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">MsSQL</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">MySQL</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">PostgreSQL</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">MongoDB</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">SQLite</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Snowflake</span>
+                </div>
+
+                <!-- Tools and Platforms -->
+                <h3 class="font-semibold">Tools and Platforms</h3>
+                <div class="flex flex-wrap gap-2 mt-1 mb-2">
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Git</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Docker</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Kubernetes</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Jenkins</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Jira</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Confluence</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">PowerBI</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Terraform</span>
+                </div>
+
+                <!-- Cloud Services -->
+                <h3 class="font-semibold">Cloud Services</h3>
+                <div class="flex flex-wrap gap-2 mt-1 mb-2">
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">AWS</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Firebase</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Supabase</span>
+                    <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">App Write</span>
+                </div>
+            </section>
+            <!-- Projects & Achievements section -->
+            <section>
+                <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Projects & Achievements
+                </h2>
+                <ul class="list-disc ml-5">
+                    <li>Developed a solution for Microsoft Exchange Server database movement automation.</li>
+                    <li>Received Pragati Award (3 times) and "Made a Difference" award at Wipro for some of the
+                        solutions.</li>
+                    <li>TCS Codevita qualifier (national-level competition).</li>
+                    <li>Five awards in coding challenges during graduation.</li>
                 </ul>
-            </div>
-            <div>
-                <h3 class="font-bold">Application Developer - Wipro Technologies</h3>
-                <p class="text-sm italic">Chennai, India | August 2018 - November 2021</p>
-                <ul class="list-disc ml-5 mt-2">
-                    <p class="text-sm font-semibold">Infrastructure Analytics</p>
-                    <ul class="list-disc ml-5">
-                        <li class="text-sm">Conducting thorough analysis and generating detailed reports to
-                            determine optimal times for scaling the VDI (Virtual Desktop Infrastructure) up or down,
-                            ensuring the best possible user experience.</li>
-                        <li class="text-sm">Gathering data from various PODS or clusters across different regions,
-                            while adhering to country-specific policies. This comprehensive data collection and
-                            policy compliance guide our decisions on infrastructure management.</li>
-                    </ul>
-                    <p class="text-sm font-semibold mt-2">Dashboard for monitoring live metrics</p>
-                    <ul class="list-disc ml-5">
-                        <li class="text-sm">Developed interactive dashboards to analyze live server metrics,
-                            enabling real-time monitoring of load capacity and infrastructure usage.</li>
-                        <li class="text-sm">Utilized these dashboards for basic troubleshooting and performance
-                            optimization of machines.</li>
-                        <li class="text-sm">Implemented using Python frameworks, MySQL for database management, and
-                            React for creating dynamic dashboards and consuming REST APIs.</li>
-                    </ul>
-                    <p class="text-sm font-semibold mt-2">Development of tools and utilities</p>
-                    <ul class="list-disc ml-5">
-                        <li class="text-sm">Developed a suite of tools and utilities to streamline IT operations and
-                            address infrastructure-related issues for BAU (Business As Usual) activities.</li>
-                        <li class="text-sm">Utilized a diverse tech stack including PowerShell, Python, and React to
-                            create robust and efficient solutions.</li>
-                        <li class="text-sm">Implemented automation workflows to minimize manual intervention,
-                            significantly reducing error rates and improving operational efficiency.</li>
-                        <li class="text-sm">Designed user-friendly interfaces and dashboards to enhance usability
-                            and provide real-time insights into system performance and issues.</li>
-                        <li class="text-sm">Collaborated with cross-functional teams to identify pain points and
-                            develop targeted solutions that address specific operational challenges.</li>
-                    </ul>
-                    <p class="text-sm font-semibold mt-2">Creating pipelines to automate the workflows</p>
-                    <ul class="list-disc ml-5">
-                        <li class="text-sm">Analyzed job streams and trends to identify opportunities for improving
-                            stability and performance. Developed and enhanced database processes using SQL and
-                            PSSQL.
-                        </li>
-                        <li class="text-sm">Published processed and analyzed data for reporting purposes, ensuring
-                            accurate and timely information dissemination.</li>
-                        <li class="text-sm">Created scripts in Python and PowerShell to automate VDI services,
-                            including creation, deletion, and other workflows, enhancing efficiency and reducing
-                            manual intervention.
-                        </li>
-                        <li class="text-sm">Managed problem resolution for batch execution outages and recovery,
-                            ensuring minimal downtime and maintaining service continuity.</li>
-                    </ul>
+            </section>
+            <section>
+                <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Certifications</h2>
+                <ul class="list-disc ml-5">
+                    <li>Python for Data Structures</li>
+                    <li>The Complete SQL Bootcamp</li>
+                    <li>Statistics for Data Science</li>
+                    <li>Python for Data Science and ML</li>
                 </ul>
-            </div>
-        </section>
+            </section>
+        </div>
     </div>
-
-    <!-- Sidebar -->
-    <div class="md:col-span-1">
-
-        <section class="mb-6">
-            <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Education</h2>
-            <p><strong>Bachelor of Technology</strong></p>
-            <p class="font-semibold">Computer Science and Engineering</p>
-            <p class="text-xs">JNTUA, Anantapuram (2014-2018)</p>
-        </section>
-        <!-- Skills Section -->
-        <section class="mb-6">
-            <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Technical Skills</h2>
-
-            <!-- Programming Languages -->
-            <h3 class="font-semibold mt-4">Programming Languages</h3>
-            <div class="flex flex-wrap gap-2 mt-1 mb-2 ">
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Python</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">JavaScript</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">TypeScript</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">PowerShell</span>
-            </div>
-
-            <!-- Frameworks and Libraries -->
-            <h3 class="font-semibold">Frameworks and Libraries</h3>
-            <div class="flex flex-wrap gap-2 mt-1 mb-2">
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">FastAPI</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Streamlit</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Flask</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">ReactJs</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">NextJs</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">ExpressJs</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Pandas</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">NumPy</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Matplotlib</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Seaborn</span>
-            </div>
-
-            <!-- Databases -->
-            <h3 class="font-semibold">Databases</h3>
-            <div class="flex flex-wrap gap-2 mt-1 mb-2">
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">MsSQL</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">MySQL</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">PostgreSQL</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">MongoDB</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">SQLite</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Snowflake</span>
-            </div>
-
-            <!-- Tools and Platforms -->
-            <h3 class="font-semibold">Tools and Platforms</h3>
-            <div class="flex flex-wrap gap-2 mt-1 mb-2">
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Git</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Docker</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Kubernetes</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Jenkins</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Jira</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Confluence</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">PowerBI</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Terraform</span>
-            </div>
-
-            <!-- Cloud Services -->
-            <h3 class="font-semibold">Cloud Services</h3>
-            <div class="flex flex-wrap gap-2 mt-1 mb-2">
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">AWS</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Firebase</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">Supabase</span>
-                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">App Write</span>
-            </div>
-        </section>
-        <!-- Projects & Achievements section -->
-        <section>
-            <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Projects & Achievements
-            </h2>
-            <ul class="list-disc ml-5">
-                <li>Developed a solution for Microsoft Exchange Server database movement automation.</li>
-                <li>Received Pragati Award (3 times) and "Made a Difference" award at Wipro for some of the
-                    solutions.</li>
-                <li>TCS Codevita qualifier (national-level competition).</li>
-                <li>Five awards in coding challenges during graduation.</li>
-            </ul>
-        </section>
-        <section>
-            <h2 class="text-xl font-bold text-purple-500 border-b border-purple-500 mb-4">Certifications</h2>
-            <ul class="list-disc ml-5">
-                <li>Python for Data Structures</li>
-                <li>The Complete SQL Bootcamp</li>
-                <li>Statistics for Data Science</li>
-                <li>Python for Data Science and ML</li>
-            </ul>
-        </section>
-    </div>
-</div>
 </body>
 
 </html>
