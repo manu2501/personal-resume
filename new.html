@@ -4,74 +4,111 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Resume — Tailwind Template</title>
+    <title>Manoj Kumar — Lead Product Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0891b2', /* cyan-600 */
+                        secondary: '#1e293b', /* slate-800 */
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        display: ['Playfair Display', 'serif']
+                    },
+                }
+            }
+        }
+    </script>
     <style>
         @media print {
             body {
                 print-color-adjust: exact;
                 -webkit-print-color-adjust: exact;
             }
+            .no-print { display: none !important; }
+            .print-break-inside-avoid { break-inside: avoid; }
+        }
+        
+        /* Ensure consistent font loading */
+        body { 
+            font-family: Inter, system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
 
-            .no-print {
-                display: none !important;
-            }
+        /* Basic link styles */
+        .contact-link:hover {
+            color: #0891b2;
+            transition: color 0.2s ease-in-out;
         }
     </style>
 </head>
 
-<body class="bg-white text-gray-900 antialiased px-2 py-4">
+<body class="bg-white text-gray-900 antialiased min-h-screen">
+    <main class="max-w-[52rem] mx-auto px-4 py-3">
+        <div class="p-0">
     <!-- Header -->
-    <header class="pt-8 pb-4 text-center">
-        <h1 class="text-3xl md:text-4xl font-serif tracking-wide font-bold text-gray-900">Kothuru Manoj Kumar</h1>
-        <div class="mt-3 flex flex-wrap justify-center items-center gap-6 text-sm text-gray-600">
-            <div class="flex items-center gap-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M16 11c1.657 0 3-1.343 3-3S17.657 5 16 5s-3 1.343-3 3 1.343 3 3 3zM8 11c1.657 0 3-1.343 3-3S9.657 5 8 5 5 6.343 5 8s1.343 3 3 3zM12 14c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z">
-                    </path>
-                </svg>
-                <span>linkedin.com/in/manoj2rox</span>
+    <header class="mb-6 print:mb-4">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
+            <div class="text-center md:text-left space-y-1">
+                <h1 class="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-secondary tracking-tight">
+                    Kothuru Manoj Kumar
+                </h1>
+                <p class="text-primary font-medium text-sm">Lead Product Engineer</p>
             </div>
-            <div class="flex items-center gap-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
-                    </path>
-                </svg>
-                <span>manoj2rox@gmail.com</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M3 5h12M9 3v2m6 16H3v-6a6 6 0 016-6h6a6 6 0 016 6v6z"></path>
-                </svg>
-                <span>+91 7013029104</span>
-            </div>
+            <nav class="flex flex-wrap justify-center md:justify-end gap-3 text-sm text-gray-600">
+                <a href="https://linkedin.com/in/manoj2rox" target="_blank" rel="noopener" 
+                   class="flex items-center gap-1.5 contact-link hover:text-primary transition-colors print:text-gray-600 min-w-max">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
+                    <span class="hover:underline">linkedin.com/in/manoj2rox</span>
+                </a>
+                <a href="mailto:manoj2rox@gmail.com" 
+                   class="flex items-center gap-1.5 contact-link hover:text-primary transition-colors print:text-gray-600 min-w-max">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                    <span class="hover:underline">manoj2rox@gmail.com</span>
+                </a>
+                <div class="flex items-center gap-1.5 min-w-max">
+                    <svg class="w-4 h-4 shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                    </svg>
+                    <span>+91 7013029104</span>
+                </div>
+            </nav>
         </div>
     </header>
 
     <!-- Summary -->
-    <section class="pt-6 pb-4">
-        <h2 class="text-xs font-bold tracking-widest text-gray-700 mb-1">SUMMARY</h2>
-        <p class="text-sm leading-relaxed text-gray-800">
-            As a Lead Product Engineer, I aim to leverage my software development and leadership skills to drive
-            innovative solutions. I am committed to continuous learning and contributing to impactful projects. My goal
-            is to enhance product quality and efficiency through effective collaboration and technology.
-        </p>
+    <section class="mb-4">
+        <h2 class="text-xs font-bold tracking-widest text-primary uppercase mb-2">Professional Summary</h2>
+        <div class="bg-gray-50 border-l-4 border-primary p-3">
+            <p class="text-gray-800 leading-relaxed text-sm">
+                Lead Product Engineer with expertise in automation, API development, and data analytics. I leverage software 
+                development and leadership skills to drive innovative solutions, focusing on scalable architectures and 
+                efficient workflows. Committed to continuous learning and mentoring teams to deliver impactful technical solutions.
+            </p>
+        </div>
     </section>
 
     <!-- Work Experience -->
-    <section class="pt-6 pb-4 border-t border-gray-200">
-        <h2 class="text-xs font-bold tracking-widest text-gray-700 mb-2">WORK EXPERIENCE</h2>
+    <section class="mb-4 border-t border-gray-100 pt-4">
+        <h2 class="text-xs font-bold tracking-widest text-primary uppercase mb-3">Professional Experience</h2>
         <!-- Experience item -->
-        <article class="mb-5">
-            <div class="flex flex-wrap justify-between items-start">
+        <article class="mb-4 print-break-inside-avoid">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 mb-2">
                 <div>
-                    <h3 class="text-base font-semibold text-gray-900">Lead Product Engineer</h3>
-                    <p class="text-sm text-gray-600">Harman International, Bengaluru</p>
+                    <h3 class="text-lg font-semibold text-secondary">Lead Product Engineer</h3>
+                    <p class="text-primary font-medium text-sm">Harman International — Bengaluru</p>
                 </div>
-                <div class="text-sm text-gray-500">Jan 2022 - Present</div>
+                <div class="text-sm text-gray-600 font-medium bg-gray-100 px-2.5 py-0.5 rounded-full">Jan 2022 — Present</div>
             </div>
             <ul class="list-disc ml-5 mt-2">
 
@@ -111,14 +148,16 @@
         </article>
 
         <!-- Experience item -->
-        <article class="mb-5">
-            <div class="flex flex-wrap justify-between items-start">
+      
+        <article class="mb-4 print-break-inside-avoid">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-1 mb-2">
                 <div>
-                    <h3 class="text-base font-semibold text-gray-900">Application Developer</h3>
-                    <p class="text-sm text-gray-600">Wipro Technologies, Chennai</p>
+                    <h3 class="text-lg font-semibold text-secondary">Application Developer</h3>
+                    <p class="text-primary font-medium text-sm">Wipro Technologies — Chennai</p>
                 </div>
-                <div class="text-sm text-gray-500">Aug 2018 - Nov 2021</div>
+                <div class="text-sm text-gray-600 font-medium bg-gray-100 px-2.5 py-0.5 rounded-full">Aug 2018 — Nov 2021</div>
             </div>
+
             <ul class="list-disc ml-5 mt-2">
                 <p class="text-sm font-semibold">Infrastructure Analytics</p>
                 <ul class="list-disc ml-5">
@@ -171,43 +210,156 @@
     </section>
 
     <!-- Skills -->
-    <section class="pt-6 pb-4 border-t border-gray-200">
-        <h2 class="text-xs font-bold tracking-widest text-gray-700 mb-2">SKILLS</h2>
-        <div class="text-sm grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-y-3 gap-x-8">
-            <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Programming Languages</h4>
-                Python, JavaScript, TypeScript, PowerShell
+    <section class="pt-4 border-t border-gray-100 print-break-inside-avoid">
+        <h2 class="text-xs font-bold tracking-widest text-primary uppercase mb-3">Technical Skills</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+            <div class="flex flex-col gap-2">
+                <div>
+                    <h4 class="text-xs font-semibold text-secondary mb-1">Programming</h4>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs">Python</span>
+                        <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs">JavaScript</span>
+                        <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs">TypeScript</span>
+                        <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs">PowerShell</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold text-secondary mb-1">Frameworks</h4>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">FastAPI</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">React</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Next.js</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Express</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Flask</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold text-secondary mb-1">AWS & Cloud</h4>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Lambda</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">EC2</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">S3</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">RDS</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">EKS</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">ECS</span>
+                    </div>
+                </div>
             </div>
-            <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Databases</h4>
-                MSSQL, PostgreSQL, MongoDB, SnowFlake, Redis
-            </div>
-            <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Cloud Platforms</h4>
-                AWS (Lambda, EC2, S3, RDS, ElastiCache, Load Balancer, EKS, ECS)
-            </div>
-            <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Soft Skills</h4>
-                Leadership, Collaboration, Planning, Teamwork, Time Management
-            </div>
-            <div>
-                <h4 class="font-semibold text-gray-900 mb-1">Frameworks & Libraries</h4>
-                FastAPI, ReactJs, NextJs, ExpressJs, Flask, Pandas, NumPy, Tailwind CSS, SQLModel, SQLAlchemy, Better-Auth, Boto3
+            <div class="flex flex-col gap-2">
+                <div>
+                    <h4 class="text-xs font-semibold text-secondary mb-1">Databases</h4>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">MSSQL</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">PostgreSQL</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">MongoDB</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Snowflake</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Redis</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold text-secondary mb-1">Development Tools</h4>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Git</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Docker</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Kubernetes</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">CI/CD</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">SQLAlchemy</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-xs font-semibold text-secondary mb-1">Professional</h4>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="px-2 py-0.5 bg-secondary/10 text-secondary rounded-full text-xs">Team Leadership</span>
+                        <span class="px-2 py-0.5 bg-secondary/10 text-secondary rounded-full text-xs">Agile</span>
+                        <span class="px-2 py-0.5 bg-secondary/10 text-secondary rounded-full text-xs">System Design</span>
+                        <span class="px-2 py-0.5 bg-secondary/10 text-secondary rounded-full text-xs">Mentoring</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+    <!-- <section class="border-t border-gray-100 pt-4">
+        <h2 class="text-xs font-bold tracking-widest text-primary uppercase mb-3">Technical Expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 ">
+            <div class="space-y-3">
+                <div>
+                    <h4 class="font-semibold text-secondary text-sm mb-1.5">Programming Languages</h4>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs">Python</span>
+                        <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs">JavaScript</span>
+                        <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs">TypeScript</span>
+                        <span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-xs">PowerShell</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-secondary text-sm mb-1.5">Frameworks & Libraries</h4>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">FastAPI</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">React.js</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Next.js</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Express.js</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Flask</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">SQLAlchemy</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-secondary text-sm mb-1.5">Cloud & Infrastructure</h4>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">AWS Lambda</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">EC2</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">S3</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">RDS</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">EKS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="space-y-3">
+                <div>
+                    <h4 class="font-semibold text-secondary text-sm mb-1.5">Databases</h4>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">MSSQL</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">PostgreSQL</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">MongoDB</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Snowflake</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Redis</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-secondary text-sm mb-1.5">Development Tools</h4>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Git</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Docker</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">Kubernetes</span>
+                        <span class="px-2 py-0.5 bg-gray-100 text-gray-700 rounded-full text-xs">CI/CD</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-secondary text-sm mb-1.5">Professional Skills</h4>
+                    <div class="flex flex-wrap gap-1.5">
+                        <span class="px-2 py-0.5 bg-secondary/10 text-secondary rounded-full text-xs">Team Leadership</span>
+                        <span class="px-2 py-0.5 bg-secondary/10 text-secondary rounded-full text-xs">Agile/Scrum</span>
+                        <span class="px-2 py-0.5 bg-secondary/10 text-secondary rounded-full text-xs">System Design</span>
+                        <span class="px-2 py-0.5 bg-secondary/10 text-secondary rounded-full text-xs">Mentoring</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
 
-    <footer class="pt-6 border-t border-gray-200 text-sm text-gray-500 flex flex-wrap justify-between items-center">
-        <div>Last updated: Oct 2025</div>
-        <div class="no-print">Designed with Tailwind CSS</div>
-    </footer>
-
-    <!-- Print Button -->
-    <div class="mt-4 text-right no-print">
-        <button onclick="window.print()"
-            class="px-4 py-2 bg-gray-900 text-white font-semibold rounded hover:bg-gray-800 transition">Print / Save
-            PDF</button>
-    </div>
+            <footer class="mt-4 pt-3 border-t border-gray-100">
+                <div class="flex flex-wrap justify-between items-center text-xs text-gray-500">
+                    <div>Last updated: Oct 2025</div>
+                    <div class="no-print text-gray-400">Built with Tailwind CSS</div>
+                </div>
+                <div class="mt-2 text-right no-print">
+                    <button onclick="window.print()"
+                        class="px-3 py-1.5 bg-primary text-white text-sm font-medium rounded hover:bg-primary/90 transition-colors">
+                        Save as PDF
+                    </button>
+                </div>
+            </footer>
+        </div>
+    </main>
 </body>
 
 </html>
