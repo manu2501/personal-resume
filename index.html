@@ -58,7 +58,51 @@
             color: #000;
         }
 
-        /* Neo-Brutalist Utilities */
+        /* Custom Cursor */
+        .cursor-dot,
+        .cursor-outline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            z-index: 9999;
+            pointer-events: none;
+        }
+
+        .cursor-dot {
+            width: 8px;
+            height: 8px;
+            background-color: black;
+        }
+
+        .cursor-outline {
+            width: 40px;
+            height: 40px;
+            border: 2px solid black;
+            transition: width 0.2s, height 0.2s, background-color 0.2s;
+        }
+
+        body:hover .cursor-outline.hovered {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(204, 255, 0, 0.5);
+            border-color: transparent;
+        }
+
+        /* Scroll Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced Neo-Brutalist Utilities */
         .neo-border {
             border: 3px solid #000;
         }
@@ -67,12 +111,12 @@
             background: #fff;
             border: 3px solid #000;
             box-shadow: 5px 5px 0px 0px #000;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .neo-card:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 8px 8px 0px 0px #000;
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0px 0px #000;
         }
 
         .neo-section-title {
@@ -86,7 +130,11 @@
             margin-bottom: 1rem;
             transform: skew(-2deg);
             border: 2px solid #000;
-            /* Ensure border exists if bg fails */
+            transition: transform 0.2s;
+        }
+
+        .neo-section-title:hover {
+            transform: skew(-2deg) scale(1.05);
         }
 
         .neo-badge {
@@ -96,13 +144,15 @@
             font-size: 0.75rem;
             padding: 0.25rem 0.5rem;
             font-weight: 700;
-            transition: all 0.1s;
+            transition: all 0.2s;
+            cursor: none;
+            /* Let custom cursor handle it */
         }
 
         .neo-badge:hover {
             background: #90f6ff;
-            transform: translate(-1px, -1px);
-            box-shadow: 2px 2px 0px 0px #000;
+            transform: translate(-2px, -2px) rotate(-2deg);
+            box-shadow: 3px 3px 0px 0px #000;
         }
 
         .neo-button {
@@ -123,16 +173,43 @@
             box-shadow: 2px 2px 0px 0px #000;
         }
 
+        /* Pulse Animation for Print Button */
+        @keyframes pulse-neo {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-pulse-neo {
+            animation: pulse-neo 2s infinite;
+        }
+
         /* Print Optimizations */
         @media print {
+
+            .cursor-dot,
+            .cursor-outline {
+                display: none;
+            }
+
             body {
                 background: #fff;
+                cursor: auto;
             }
 
             .neo-card {
                 box-shadow: none;
                 border: 2px solid #000;
                 break-inside: avoid;
+                transform: none !important;
             }
 
             .no-print {
@@ -143,6 +220,11 @@
                 background: #fff;
                 color: #000;
                 border: 2px solid #000;
+            }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
             }
         }
     </style>
@@ -419,14 +501,91 @@
         <p>Last updated: Nov 2025</p>
     </footer>
 
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
     <!-- Floating Print Button -->
     <div class="fixed bottom-8 right-8 no-print z-50">
-        <button onclick="window.print()" class="neo-button bg-neo-pink px-6 py-3 flex items-center gap-2 text-lg">
+        <button onclick="window.print()"
+            class="neo-button bg-neo-pink px-6 py-3 flex items-center gap-2 text-lg animate-pulse-neo">
             <i class="fas fa-file-pdf"></i>
             <span>Save as PDF</span>
         </button>
     </div>
 
+    <script>
+        // Custom Cursor Logic
+        const cursorDot = document.querySelector('[data-cursor-dot]');
+        const cursorOutline = document.querySelector('[data-cursor-outline]');
+
+        window.addEventListener('mousemove', function (e) {
+            const posX = e.clientX;
+            const posY = e.clientY;
+
+            cursorDot.style.left = `${posX}px`;
+            cursorDot.style.top = `${posY}px`;
+
+            // Add a slight delay for the outline to create a trailing effect
+            cursorOutline.animate({
+                left: `${posX}px`,
+                top: `${posY}px`
+            }, { duration: 500, fill: "forwards" });
+        });
+
+        // Hover effect for interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .neo-card, .neo-badge');
+        interactiveElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorOutline.classList.add('hovered');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursorOutline.classList.remove('hovered');
+            });
+        });
+
+        // Scroll Animation Logic
+        function reveal() {
+            var reveals = document.querySelectorAll(".neo-card, .neo-section-title, li");
+
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                    reveals[i].classList.add("reveal"); // Ensure class is added if not present
+                } else {
+                    // Optional: remove class to re-animate when scrolling up
+                    // reveals[i].classList.remove("active");
+                }
+            }
+        }
+
+        // Initial check and event listener
+        window.addEventListener("scroll", reveal);
+
+        // Add reveal class to elements initially
+        document.addEventListener("DOMContentLoaded", function () {
+            var elementsToAnimate = document.querySelectorAll(".neo-card, .neo-section-title, li");
+            elementsToAnimate.forEach(el => {
+                el.classList.add("reveal");
+            });
+            reveal(); // Trigger once on load
+        });
+
+        // Header Parallax Effect
+        const header = document.querySelector('header');
+        const headerShape = header.querySelector('.absolute');
+
+        header.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            headerShape.style.transform = `translate(-${x * 20}px, -${y * 20}px)`;
+        });
+    </script>
 </body>
 
 </html>
