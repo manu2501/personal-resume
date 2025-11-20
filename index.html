@@ -758,29 +758,13 @@
         }
 
         // PDF friendly export using alternative layout
-        async function openPdfResume() {
-            try {
-                const response = await fetch('alternative.html', { cache: 'no-store' });
-                const html = await response.text();
-                const pdfWindow = window.open('', '_blank', 'noopener,noreferrer');
+        function openPdfResume() {
+            const targetUrl = 'alternative.html?print=1';
+            const pdfWindow = window.open(targetUrl, '_blank', 'noopener,noreferrer');
 
-                if (!pdfWindow) {
-                    throw new Error('Popup blocked');
-                }
-
-                const autoPrintHtml = html.replace('</body>',
-                    `<script>
-                        window.addEventListener('load', () => {
-                            setTimeout(() => window.print(), 350);
-                        });
-                    <\/script></body>`);
-
-                pdfWindow.document.open();
-                pdfWindow.document.write(autoPrintHtml);
-                pdfWindow.document.close();
-            } catch (error) {
-                console.error('Failed to render PDF friendly resume', error);
-                window.open('alternative.html', '_blank');
+            if (!pdfWindow) {
+                // Fallback if pop-ups are blocked
+                window.location.href = targetUrl;
             }
         }
     </script>
