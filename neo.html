@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manoj Kumar Kothuru - Resume</title>
+    <meta name="description"
+        content="Resume of Manoj Kumar Kothuru, Lead Product Engineer with expertise in software development, automation, and data visualization.">
+    <meta name="keywords"
+        content="Manoj Kumar Kothuru, Lead Product Engineer, Resume, Software Development, Automation, Data Visualization, Power BI, Python, JavaScript">
+    <meta name="author" content="Manoj Kumar Kothuru">
+    <meta property="og:title" content="Manoj Kumar Kothuru - Resume">
+    <meta property="og:description"
+        content="Resume of Manoj Kumar Kothuru, Lead Product Engineer with expertise in software development, automation, and data visualization.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neo-bg': '#fffdf5',
+                        'neo-black': '#000000',
+                        'neo-green': '#ccff00',
+                        'neo-pink': '#ff90e8',
+                        'neo-blue': '#90f6ff',
+                        'neo-yellow': '#ffeb3b',
+                    },
+                    fontFamily: {
+                        sans: ['"Space Grotesk"', 'sans-serif'],
+                        mono: ['"Space Mono"', 'monospace'],
+                    },
+                    boxShadow: {
+                        'neo': '5px 5px 0px 0px rgba(0,0,0,1)',
+                        'neo-hover': '8px 8px 0px 0px rgba(0,0,0,1)',
+                        'neo-sm': '3px 3px 0px 0px rgba(0,0,0,1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #fffdf5;
+            color: #000;
+        }
+
+        /* Neo-Brutalist Utilities */
+        .neo-border {
+            border: 3px solid #000;
+        }
+
+        .neo-card {
+            background: #fff;
+            border: 3px solid #000;
+            box-shadow: 5px 5px 0px 0px #000;
+            transition: all 0.2s ease;
+        }
+
+        .neo-card:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 8px 8px 0px 0px #000;
+        }
+
+        .neo-section-title {
+            background-color: #000;
+            color: #fff;
+            display: inline-block;
+            padding: 0.25rem 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            transform: skew(-2deg);
+            border: 2px solid #000;
+            /* Ensure border exists if bg fails */
+        }
+
+        .neo-badge {
+            background: #fff;
+            border: 2px solid #000;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+            font-weight: 700;
+            transition: all 0.1s;
+        }
+
+        .neo-badge:hover {
+            background: #90f6ff;
+            transform: translate(-1px, -1px);
+            box-shadow: 2px 2px 0px 0px #000;
+        }
+
+        .neo-button {
+            background: #ccff00;
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0px 0px #000;
+            font-weight: 700;
+            transition: all 0.1s ease;
+        }
+
+        .neo-button:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px 0px #000;
+        }
+
+        .neo-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0px 0px #000;
+        }
+
+        /* Print Optimizations */
+        @media print {
+            body {
+                background: #fff;
+            }
+
+            .neo-card {
+                box-shadow: none;
+                border: 2px solid #000;
+                break-inside: avoid;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .neo-section-title {
+                background: #fff;
+                color: #000;
+                border: 2px solid #000;
+            }
+        }
+    </style>
+</head>
+
+<body class="p-4 md:p-8 max-w-7xl mx-auto min-h-screen">
+
+    <!-- Header -->
+    <header
+        class="neo-card p-6 mb-8 flex flex-col md:flex-row justify-between items-start md:items-center bg-white relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 w-32 h-32 bg-neo-yellow rounded-full border-4 border-black -mr-16 -mt-16 z-0 opacity-50">
+        </div>
+
+        <div class="relative z-10">
+            <h1 class="text-4xl md:text-6xl font-bold mb-2 tracking-tighter">MANOJ KUMAR KOTHURU</h1>
+            <div
+                class="inline-block bg-neo-black text-white px-4 py-1 text-lg md:text-xl font-mono font-bold transform -rotate-1">
+                LEAD PRODUCT ENGINEER
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-4 text-sm font-bold">
+                <a href="mailto:manoj2rox@gmail.com"
+                    class="flex items-center gap-2 hover:underline hover:text-blue-600">
+                    <i class="fas fa-envelope"></i> manoj2rox@gmail.com
+                </a>
+                <span class="hidden sm:inline">|</span>
+                <a href="tel:+917013029104" class="flex items-center gap-2 hover:underline hover:text-blue-600">
+                    <i class="fas fa-phone"></i> +91-7013029104
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-6 md:mt-0 relative z-10 flex gap-4">
+            <a href="https://www.github.com/manu2501" target="_blank"
+                class="neo-button px-4 py-2 flex items-center gap-2 bg-white hover:bg-gray-100">
+                <i class="fab fa-github text-xl"></i>
+                <span>GitHub</span>
+            </a>
+            <a href="https://linkedin.com/in/manoj2rox" target="_blank"
+                class="neo-button px-4 py-2 flex items-center gap-2 bg-neo-blue hover:bg-blue-300">
+                <i class="fab fa-linkedin text-xl"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        <!-- Left Column (Main Content) -->
+        <div class="lg:col-span-2 space-y-8">
+
+            <!-- Objective -->
+            <section class="neo-card p-6">
+                <h2 class="neo-section-title">Objective</h2>
+                <p class="text-lg leading-relaxed font-medium border-l-4 border-neo-green pl-4">
+                    Senior Software Engineer with expertise in full-stack development, distributed systems, and API
+                    design.
+                    Proven track record of architecting scalable solutions and leading development teams.
+                    Passionate about clean code, software design patterns, and building high-performance applications.
+                </p>
+            </section>
+
+            <!-- Experience -->
+            <section class="neo-card p-6">
+                <h2 class="neo-section-title bg-neo-pink text-black">Experience</h2>
+
+                <!-- Job 1 -->
+                <div class="mb-8 border-b-4 border-black pb-6 last:border-0 last:pb-0">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                        <h3 class="text-2xl font-bold">Lead Product Engineer</h3>
+                        <span class="font-mono bg-gray-200 px-2 py-1 border border-black text-xs font-bold">Nov 2021 -
+                            Present</span>
+                    </div>
+                    <div class="text-lg font-bold mb-4 text-gray-700">Harman International <span
+                            class="text-sm font-normal text-gray-500">| Bengaluru, India</span></div>
+
+                    <div class="space-y-4">
+                        <div class="bg-neo-bg border-2 border-black p-4">
+                            <h4 class="font-bold border-b-2 border-black inline-block mb-2">Service Request Management
+                                Platform</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+                                <li>Architected microservices platform (10k+ daily requests, 99.9% uptime) using
+                                    <strong>FastAPI</strong> & <strong>Node.js</strong>.</li>
+                                <li>Built RESTful APIs with OAuth2 (Python), improving integration efficiency by 40%.
+                                </li>
+                                <li>Led 7 developers, implemented CI/CD (GitHub Actions), reducing deployment time by
+                                    60%.</li>
+                                <li>Automated testing (Jest, PyTest) -> 85% coverage, 45% fewer bugs.</li>
+                                <li>Implemented Redis pub/sub for event-driven processing (1M+ events/day).</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-neo-bg border-2 border-black p-4">
+                            <h4 class="font-bold border-b-2 border-black inline-block mb-2">Analytics Engine & Dashboard
+                            </h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+                                <li>Real-time analytics engine (Python, React) processing data via
+                                    <strong>Snowflake</strong>.</li>
+                                <li>Optimized pipelines reducing processing time by 70%.</li>
+                                <li>APIs serving 1000+ concurrent users with sub-second latency.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="mb-2">
+                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
+                        <h3 class="text-2xl font-bold">Software Engineer</h3>
+                        <span class="font-mono bg-gray-200 px-2 py-1 border border-black text-xs font-bold">Aug 2018 -
+                            Nov 2021</span>
+                    </div>
+                    <div class="text-lg font-bold mb-4 text-gray-700">Wipro Technologies <span
+                            class="text-sm font-normal text-gray-500">| Chennai, India</span></div>
+
+                    <div class="space-y-4">
+                        <div class="bg-neo-bg border-2 border-black p-4">
+                            <h4 class="font-bold border-b-2 border-black inline-block mb-2">Infrastructure Monitoring
+                            </h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+                                <li>Scalable monitoring (Python, Django) for 1000+ VDI instances.</li>
+                                <li>Predictive scaling algorithms improving resource utilization.</li>
+                                <li>Data collection microservices using ELK stack.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-neo-bg border-2 border-black p-4">
+                            <h4 class="font-bold border-b-2 border-black inline-block mb-2">Real-time Analytics</h4>
+                            <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
+                                <li>SPA (React, Redux) serving 500+ concurrent users.</li>
+                                <li>WebSocket connections for live metric updates.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Right Column (Sidebar) -->
+        <div class="space-y-8">
+
+            <!-- Education -->
+            <section class="neo-card p-6 bg-neo-yellow">
+                <h2 class="neo-section-title bg-white text-black">Education</h2>
+                <div class="border-l-4 border-black pl-4">
+                    <div class="font-bold text-xl">Bachelor of Technology</div>
+                    <div class="font-mono text-sm mb-2">Computer Science and Engineering</div>
+                    <div class="text-sm font-bold">JNTUA, Anantapuram</div>
+                    <div class="text-xs">2014 - 2018</div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section class="neo-card p-6">
+                <h2 class="neo-section-title">Technical Skills</h2>
+
+                <div class="mb-4">
+                    <h3 class="font-bold mb-2 border-b-2 border-gray-200">Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="neo-badge">Python</span>
+                        <span class="neo-badge">JavaScript</span>
+                        <span class="neo-badge">TypeScript</span>
+                        <span class="neo-badge">PowerShell</span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h3 class="font-bold mb-2 border-b-2 border-gray-200">Frameworks</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="neo-badge">FastAPI</span>
+                        <span class="neo-badge">Django</span>
+                        <span class="neo-badge">Flask</span>
+                        <span class="neo-badge">ReactJs</span>
+                        <span class="neo-badge">NextJs</span>
+                        <span class="neo-badge">ExpressJs</span>
+                        <span class="neo-badge">Pandas</span>
+                        <span class="neo-badge">NumPy</span>
+                        <span class="neo-badge">SQLModel</span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h3 class="font-bold mb-2 border-b-2 border-gray-200">Databases</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="neo-badge">PostgreSQL</span>
+                        <span class="neo-badge">MongoDB</span>
+                        <span class="neo-badge">Snowflake</span>
+                        <span class="neo-badge">MySQL</span>
+                        <span class="neo-badge">Redis</span>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <h3 class="font-bold mb-2 border-b-2 border-gray-200">Cloud & Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="neo-badge">AWS</span>
+                        <span class="neo-badge">Azure</span>
+                        <span class="neo-badge">Docker</span>
+                        <span class="neo-badge">K8s</span>
+                        <span class="neo-badge">Terraform</span>
+                        <span class="neo-badge">Jenkins</span>
+                        <span class="neo-badge">Git</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects & Achievements -->
+            <section class="neo-card p-6">
+                <h2 class="neo-section-title bg-neo-green text-black">Achievements</h2>
+                <ul class="space-y-3 text-sm font-medium">
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-trophy mt-1 text-yellow-600"></i>
+                        <span>Microsoft Exchange Server automation solution.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-star mt-1 text-yellow-600"></i>
+                        <span>Pragati Award (3x) & "Made a Difference" award at Wipro.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <i class="fas fa-code mt-1 text-blue-600"></i>
+                        <span>TCS Codevita national qualifier.</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Certifications -->
+            <section class="neo-card p-6">
+                <h2 class="neo-section-title">Certifications</h2>
+                <ul class="list-square list-inside text-sm font-mono space-y-1">
+                    <li>Python for Data Structures</li>
+                    <li>The Complete SQL Bootcamp</li>
+                    <li>Statistics for Data Science</li>
+                    <li>Python for Data Science and ML</li>
+                </ul>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="mt-12 text-center font-mono text-sm opacity-60 pb-8">
+        <p>Last updated: Nov 2025 | Built with Neo-Brutalism</p>
+    </footer>
+
+    <!-- Floating Print Button -->
+    <div class="fixed bottom-8 right-8 no-print z-50">
+        <button onclick="window.print()" class="neo-button bg-neo-pink px-6 py-3 flex items-center gap-2 text-lg">
+            <i class="fas fa-file-pdf"></i>
+            <span>Save as PDF</span>
+        </button>
+    </div>
+
+</body>
+
+</html>
