@@ -120,21 +120,22 @@
         }
 
         .neo-section-title {
-            background-color: #000;
-            color: #fff;
-            display: inline-block;
-            padding: 0.25rem 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-            margin-bottom: 1rem;
-            transform: skew(-2deg);
-            border: 2px solid #000;
-            transition: transform 0.2s;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 4px solid #000;
+            font-size: 0.9rem;
+            color: #111;
+            position: relative;
         }
 
         .neo-section-title:hover {
-            transform: skew(-2deg) scale(1.05);
+            letter-spacing: 0.12em;
         }
 
         .neo-badge {
@@ -171,6 +172,133 @@
         .neo-button:active {
             transform: translate(2px, 2px);
             box-shadow: 2px 2px 0px 0px #000;
+        }
+
+        /* Accentricity UI Enhancements */
+        .accent-shell {
+            background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.9), rgba(255, 248, 222, 0.9));
+            border-radius: 2.5rem;
+            border: 4px solid #000;
+            box-shadow: 18px 18px 0px 0px #000;
+        }
+
+        .accent-hero {
+            background: linear-gradient(135deg, #fffdf5 0%, #fef3f8 35%, #f4ffcc 100%);
+            border-radius: 2rem;
+            border: 4px solid #000;
+            box-shadow: 14px 14px 0px #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .accent-hero::after {
+            content: "";
+            position: absolute;
+            inset: 2rem;
+            border-radius: 999px;
+            border: 2px dashed rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+        }
+
+        .accent-hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .accent-pane {
+            border-radius: 1.5rem;
+            border-width: 4px;
+        }
+
+        .accent-layer {
+            border-radius: 1.25rem;
+            border-width: 3px;
+        }
+
+        .accent-divider {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.3em;
+            color: #222;
+        }
+
+        .accent-divider::before,
+        .accent-divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 3px solid #000;
+            border-radius: 999px;
+            box-shadow: 4px 4px 0px #000;
+            height: 0;
+        }
+
+        .accent-button {
+            border-radius: 999px;
+            border: 3px solid #000;
+            box-shadow: 6px 6px 0px #000;
+            padding: 0.85rem 1.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+        }
+
+        .accent-button:hover {
+            transform: translate(-3px, -3px) scale(1.01);
+            box-shadow: 10px 10px 0px #000;
+            filter: brightness(1.05);
+        }
+
+        .accent-button:active {
+            transform: translate(2px, 2px);
+            box-shadow: 3px 3px 0px #000;
+        }
+
+        .accent-pill {
+            border: 3px solid #000;
+            border-radius: 999px;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .accent-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .accent-form input,
+        .accent-form textarea {
+            border: 3px solid #000;
+            border-radius: 1rem;
+            padding: 0.9rem 1.2rem;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .accent-form input:focus,
+        .accent-form textarea:focus {
+            outline: none;
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px #000;
+        }
+
+        .micro-tilt {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .micro-tilt:hover {
+            transform: translateY(-4px) rotate(-0.5deg);
+            box-shadow: 12px 12px 0px #000;
         }
 
         /* Pulse Animation for Print Button */
@@ -230,276 +358,330 @@
     </style>
 </head>
 
-<body class="p-4 md:p-8 max-w-7xl mx-auto min-h-screen">
+<body class="bg-neo-bg text-neo-black font-sans">
 
-    <!-- Header -->
-    <header
-        class="neo-card p-6 mb-8 flex flex-col md:flex-row justify-between items-start md:items-center bg-white relative overflow-hidden">
-        <div
-            class="absolute top-0 right-0 w-32 h-32 bg-neo-yellow rounded-full border-4 border-black -mr-16 -mt-16 z-0 opacity-50">
-        </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-8 py-10 lg:py-16 space-y-10 relative">
 
-        <div class="relative z-10">
-            <h1 class="text-4xl md:text-6xl font-bold mb-2 tracking-tighter">MANOJ KUMAR KOTHURU</h1>
+        <!-- HERO -->
+        <header class="accent-hero neo-card p-8 lg:p-10 space-y-8 overflow-hidden relative">
             <div
-                class="inline-block bg-neo-black text-white px-4 py-1 text-lg md:text-xl font-mono font-bold transform -rotate-1">
-                LEAD PRODUCT ENGINEER
+                class="absolute -top-10 -right-6 w-48 h-48 bg-neo-yellow rounded-full border-4 border-black opacity-60">
+            </div>
+            <div class="flex flex-col gap-4 relative z-10">
+                <span class="accent-pill bg-white shadow-sm">Lead Product Engineer · 8+ yrs</span>
+                <h1 class="text-4xl md:text-6xl font-bold tracking-tight leading-tight">Manoj Kumar
+                    <span
+                        class="text-transparent bg-clip-text bg-gradient-to-r from-neo-pink via-neo-yellow to-neo-blue">Kothuru</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-2xl font-medium text-gray-700 leading-relaxed">
+                    Building resilient platforms, real-time analytics, and delightful developer experiences.
+                    Neo-brutalist aesthetics meet precision engineering to ship bold, reliable software.
+                </p>
+
+                <div class="flex flex-wrap gap-3 text-sm font-semibold">
+                    <a href="mailto:manoj2rox@gmail.com"
+                        class="accent-pill bg-neo-green hover:brightness-110 hover:-translate-y-0.5 transition">
+                        <i class="fas fa-envelope"></i> manoj2rox@gmail.com
+                    </a>
+                    <a href="tel:+917013029104"
+                        class="accent-pill bg-white hover:bg-neo-blue transition hover:-translate-y-0.5">
+                        <i class="fas fa-phone"></i> +91 7013029104
+                    </a>
+                </div>
             </div>
 
-            <div class="mt-6 flex flex-wrap gap-4 text-sm font-bold">
-                <a href="mailto:manoj2rox@gmail.com"
-                    class="flex items-center gap-2 hover:underline hover:text-blue-600">
-                    <i class="fas fa-envelope"></i> manoj2rox@gmail.com
-                </a>
-                <span class="hidden sm:inline">|</span>
-                <a href="tel:+917013029104" class="flex items-center gap-2 hover:underline hover:text-blue-600">
-                    <i class="fas fa-phone"></i> +91-7013029104
-                </a>
+            <div class="accent-hero-grid relative z-10">
+                <div class="neo-card accent-pane bg-white p-6 space-y-4 micro-tilt">
+                    <p class="uppercase tracking-[0.3em] text-xs font-bold">Focus</p>
+                    <h3 class="text-2xl font-bold">Platform Engineering</h3>
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Cloud-native architecture, high-availability APIs, and modern data infrastructure spanning
+                        FastAPI, Node.js, and Snowflake ecosystems.
+                    </p>
+                </div>
+                <div class="neo-card accent-pane bg-neo-blue/60 p-6 space-y-4 micro-tilt">
+                    <p class="uppercase tracking-[0.3em] text-xs font-bold">Impact</p>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div>
+                            <span class="text-3xl font-black block">1M+</span>
+                            <p class="text-xs font-semibold uppercase tracking-widest">Events / Day</p>
+                        </div>
+                        <div>
+                            <span class="text-3xl font-black block">99.9%</span>
+                            <p class="text-xs font-semibold uppercase tracking-widest">Uptime</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="neo-card accent-pane bg-white p-6 space-y-4 micro-tilt">
+                    <p class="uppercase tracking-[0.3em] text-xs font-bold">Connect</p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://www.github.com/manu2501" target="_blank"
+                            class="accent-button bg-white hover:bg-gray-100 flex items-center gap-2 text-sm">
+                            <i class="fab fa-github text-xl"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/manoj2rox" target="_blank"
+                            class="accent-button bg-neo-blue hover:bg-blue-300 flex items-center gap-2 text-sm">
+                            <i class="fab fa-linkedin text-xl"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
+        </header>
 
-        <div class="mt-6 md:mt-0 relative z-10 flex gap-4">
-            <a href="https://www.github.com/manu2501" target="_blank"
-                class="neo-button px-4 py-2 flex items-center gap-2 bg-white hover:bg-gray-100">
-                <i class="fab fa-github text-xl"></i>
-                <span>GitHub</span>
-            </a>
-            <a href="https://linkedin.com/in/manoj2rox" target="_blank"
-                class="neo-button px-4 py-2 flex items-center gap-2 bg-neo-blue hover:bg-blue-300">
-                <i class="fab fa-linkedin text-xl"></i>
-                <span>LinkedIn</span>
-            </a>
-        </div>
-    </header>
+        <div class="accent-divider"><span>Experience Narrative</span></div>
 
-    <main class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-        <!-- Left Column (Main Content) -->
-        <div class="lg:col-span-2 space-y-8">
+        <main class="space-y-12">
 
             <!-- Objective -->
-            <section class="neo-card p-6">
-                <h2 class="neo-section-title">Objective</h2>
-                <p class="text-lg leading-relaxed font-medium border-l-4 border-neo-green pl-4">
-                    Senior Software Engineer with expertise in full-stack development, distributed systems, and API
-                    design.
-                    Proven track record of architecting scalable solutions and leading development teams.
-                    Passionate about clean code, software design patterns, and building high-performance applications.
+            <section class="neo-card accent-pane p-8 space-y-4 bg-white">
+                <div class="flex flex-wrap justify-between gap-4 items-center">
+                    <div>
+                        <p class="neo-section-title">Objective</p>
+                        <h2 class="text-3xl font-black tracking-tight">Craft reliable, calm software systems.</h2>
+                    </div>
+                    <div class="accent-pill bg-neo-yellow">High performance · Design first · Leadership</div>
+                </div>
+                <p class="text-lg leading-relaxed text-gray-800">
+                    Senior Software Engineer specializing in resilient full-stack platforms, distributed systems, and
+                    API
+                    ecosystems. Led multi-disciplinary teams to architect microservices, automate delivery, and elevate
+                    developer experience with clean design and measurable impact.
                 </p>
             </section>
 
             <!-- Experience -->
-            <section class="neo-card p-6">
-                <h2 class="neo-section-title bg-neo-pink text-black">Experience</h2>
+            <section class="space-y-8">
+                <header class="flex flex-col gap-2">
+                    <p class="neo-section-title">Experience</p>
+                    <p class="text-sm uppercase tracking-[0.3em] font-bold text-gray-600">Impact cards</p>
+                </header>
 
-                <!-- Job 1 -->
-                <div class="mb-8 border-b-4 border-black pb-6 last:border-0 last:pb-0">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                        <h3 class="text-2xl font-bold">Lead Product Engineer</h3>
-                        <span class="font-mono bg-gray-200 px-2 py-1 border border-black text-xs font-bold">Nov 2021 -
-                            Present</span>
+                <article class="neo-card accent-pane p-8 space-y-6 bg-white">
+                    <div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
+                        <div>
+                            <h3 class="text-2xl font-black">Lead Product Engineer</h3>
+                            <p class="text-gray-600 font-semibold">Harman International · Bengaluru, India</p>
+                        </div>
+                        <span class="accent-pill bg-white font-mono text-xs">Nov 2021 – Present</span>
                     </div>
-                    <div class="text-lg font-bold mb-4 text-gray-700">Harman International <span
-                            class="text-sm font-normal text-gray-500">| Bengaluru, India</span></div>
 
+                    <div class="accent-card-grid">
+                        <div class="neo-card accent-layer bg-neo-blue/40 p-5 space-y-3">
+                            <h4 class="font-bold uppercase tracking-[0.2em] text-xs">Service Request Platform</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Designed microservices platform handling 10k+ daily requests with 99.9% uptime.</li>
+                                <li>Engineered OAuth2-secured APIs, reducing integration latency by 50%.</li>
+                                <li>Led 7-engineer squad; GitHub Actions pipelines cut deployments by 60%.</li>
+                            </ul>
+                        </div>
+                        <div class="neo-card accent-layer bg-white p-5 space-y-3">
+                            <h4 class="font-bold uppercase tracking-[0.2em] text-xs">Quality & Reliability</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Championed Jest & PyTest suites to 85% coverage; bugs dropped by 45%.</li>
+                                <li>Introduced Redis event streaming processing 1M+ events daily.</li>
+                                <li>Optimized DB + caching flows cutting response times by 65%.</li>
+                            </ul>
+                        </div>
+                        <div class="neo-card accent-layer bg-white p-5 space-y-3">
+                            <h4 class="font-bold uppercase tracking-[0.2em] text-xs">Analytics Engine & Dashboard</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Built Python + React analytics stack atop Snowflake with realtime visuals.</li>
+                                <li>Reduced data prep latency by 70% via streaming pipelines.</li>
+                                <li>Served 1k+ concurrent users with sub-second API responses.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="neo-card accent-pane p-8 space-y-6 bg-white">
+                    <div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
+                        <div>
+                            <h3 class="text-2xl font-black">Software Engineer</h3>
+                            <p class="text-gray-600 font-semibold">Wipro Technologies · Chennai, India</p>
+                        </div>
+                        <span class="accent-pill bg-white font-mono text-xs">Aug 2018 – Nov 2021</span>
+                    </div>
+
+                    <div class="accent-card-grid">
+                        <div class="neo-card accent-layer bg-white p-5 space-y-3">
+                            <h4 class="font-bold uppercase tracking-[0.2em] text-xs">Infrastructure Monitoring</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Shipped Django/Python monitoring fabric across 1000+ VDI instances.</li>
+                                <li>Built predictive scaling intelligence improving footprint efficiency.</li>
+                                <li>Authored ELK-backed microservices for telemetry ingestion.</li>
+                            </ul>
+                        </div>
+                        <div class="neo-card accent-layer bg-neo-yellow/60 p-5 space-y-3">
+                            <h4 class="font-bold uppercase tracking-[0.2em] text-xs">Real-time Analytics Dashboard</h4>
+                            <ul class="list-disc list-inside space-y-1 text-sm">
+                                <li>Delivered React + Redux SPA surfacing live metrics to 500+ users.</li>
+                                <li>Created Express APIs plus WebSockets for push updates.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <div class="accent-divider"><span>Capabilities Grid</span></div>
+
+            <!-- Education & Skills -->
+            <section class="grid gap-8 lg:grid-cols-3">
+                <div class="neo-card accent-pane bg-neo-yellow p-8 space-y-4">
+                    <p class="neo-section-title">Education</p>
+                    <h3 class="text-2xl font-black">Bachelor of Technology</h3>
+                    <p class="font-mono text-sm">Computer Science & Engineering</p>
+                    <p class="font-semibold">JNTUA, Anantapuram</p>
+                    <p class="text-sm font-bold">2014 – 2018</p>
+                </div>
+
+                <div class="neo-card accent-pane bg-white p-8 space-y-4 lg:col-span-2">
+                    <p class="neo-section-title">Technical Skills</p>
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-black uppercase tracking-[0.2em] text-xs mb-3">Languages</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="neo-badge">Python</span>
+                                <span class="neo-badge">JavaScript</span>
+                                <span class="neo-badge">TypeScript</span>
+                                <span class="neo-badge">PowerShell</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-black uppercase tracking-[0.2em] text-xs mb-3">Frameworks</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="neo-badge">FastAPI</span>
+                                <span class="neo-badge">Django</span>
+                                <span class="neo-badge">Flask</span>
+                                <span class="neo-badge">React</span>
+                                <span class="neo-badge">Next.js</span>
+                                <span class="neo-badge">Express</span>
+                                <span class="neo-badge">Pandas</span>
+                                <span class="neo-badge">NumPy</span>
+                                <span class="neo-badge">SQLModel</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-black uppercase tracking-[0.2em] text-xs mb-3">Databases</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="neo-badge">PostgreSQL</span>
+                                <span class="neo-badge">MongoDB</span>
+                                <span class="neo-badge">Snowflake</span>
+                                <span class="neo-badge">MySQL</span>
+                                <span class="neo-badge">Redis</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-black uppercase tracking-[0.2em] text-xs mb-3">Cloud & Tools</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="neo-badge">AWS</span>
+                                <span class="neo-badge">Azure</span>
+                                <span class="neo-badge">Docker</span>
+                                <span class="neo-badge">K8s</span>
+                                <span class="neo-badge">Terraform</span>
+                                <span class="neo-badge">Jenkins</span>
+                                <span class="neo-badge">Git</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="accent-divider"><span>Honors & Creds</span></div>
+
+            <!-- Achievements & Certifications -->
+            <section class="grid gap-8 lg:grid-cols-2">
+                <div class="neo-card accent-pane bg-white p-8 space-y-4">
+                    <p class="neo-section-title">Achievements</p>
                     <div class="space-y-4">
-                        <div class="bg-neo-bg border-2 border-black p-4">
-                            <h4 class="font-bold border-b-2 border-black inline-block mb-2">Service Request Management
-                                Platform</h4>
-                            <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
-                                <li>Architected and implemented a high-performance microservices-based
-                                    platform handling 10,000+ daily requests, achieving 99.9% uptime using FastAPI and
-                                    Node.js.</li>
-                                <li>Designed and built RESTful APIs with OAuth2 authentication using
-                                    Python, resulting in 40% improved system integration efficiency and 50% reduced data
-                                    exchange latency.</li>
-                                <li>Led a team of 7 developers using Agile/Scrum, implementing CI/CD
-                                    pipelines with GitHub Actions that reduced deployment time by 60%.</li>
-                                <li>Developed automated testing framework using Jest and PyTest,
-                                    achieving 85% code coverage and reducing bug reports by 45%.</li>
-                                <li>Implemented event-driven architecture using Redis pub/sub for
-                                    real-time service request processing, handling 1M+ events daily.</li>
-                                <li>Optimized database queries and implemented Redis caching strategies,
-                                    reducing response times by 65% and improving application performance.</li>
-                            </ul>
+                        <div class="flex gap-4 items-start neo-card accent-layer p-4 bg-neo-green/70">
+                            <i class="fas fa-trophy text-2xl"></i>
+                            <div>
+                                <h4 class="font-black uppercase tracking-[0.2em] text-xs mb-1">Automation</h4>
+                                <p class="text-sm font-medium">Built Microsoft Exchange Server automation suite used
+                                    across delivery teams.</p>
+                            </div>
                         </div>
-
-                        <div class="bg-neo-bg border-2 border-black p-4">
-                            <h4 class="font-bold border-b-2 border-black inline-block mb-2">Analytics Engine & Dashboard
-                            </h4>
-                            <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
-                                <li>Engineered a real-time analytics engine using Python and React,
-                                    processing large volumes of data daily through Snowflake data warehouse.</li>
-                                <li>Implemented sophisticated data processing pipelines, reducing data
-                                    processing time by 70%.</li>
-                                <li>Designed and implemented RESTful APIs for analytics data retrieval,
-                                    serving 1000+ concurrent users with sub-second response times.</li>
-                            </ul>
+                        <div class="flex gap-4 items-start neo-card accent-layer p-4 bg-white">
+                            <i class="fas fa-trophy text-2xl text-yellow-600"></i>
+                            <div>
+                                <h4 class="font-black uppercase tracking-[0.2em] text-xs mb-1">Recognition</h4>
+                                <p class="text-sm font-medium">Pragati Award (3x) & “Made a Difference” honor at Wipro
+                                    for platform modernization.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-start neo-card accent-layer p-4 bg-white">
+                            <i class="fas fa-trophy text-2xl"></i>
+                            <div>
+                                <h4 class="font-black uppercase tracking-[0.2em] text-xs mb-1">Competitions</h4>
+                                <p class="text-sm font-medium">TCS CodeVita national qualifier.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Job 2 -->
-                <div class="mb-2">
-                    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-                        <h3 class="text-2xl font-bold">Software Engineer</h3>
-                        <span class="font-mono bg-gray-200 px-2 py-1 border border-black text-xs font-bold">Aug 2018 -
-                            Nov 2021</span>
-                    </div>
-                    <div class="text-lg font-bold mb-4 text-gray-700">Wipro Technologies <span
-                            class="text-sm font-normal text-gray-500">| Chennai, India</span></div>
-
-                    <div class="space-y-4">
-                        <div class="bg-neo-bg border-2 border-black p-4">
-                            <h4 class="font-bold border-b-2 border-black inline-block mb-2">Infrastructure Monitoring
-                            </h4>
-                            <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
-                                <li>Designed and implemented a scalable monitoring system using Python
-                                    and Django, processing metrics from 1000+ VDI instances across multiple regions.
-                                </li>
-                                <li>Implemented predictive scaling algorithms in the application that
-                                    improved resource utilization.</li>
-                                <li>Implemented data collection microservices using ELK stack.</li>
-                            </ul>
-                        </div>
-
-                        <div class="bg-neo-bg border-2 border-black p-4">
-                            <h4 class="font-bold border-b-2 border-black inline-block mb-2">Real-time Analytics
-                                Dashboard</h4>
-                            <ul class="list-disc list-inside space-y-2 text-sm md:text-base">
-                                <li>Built a responsive single-page application using React and Redux,
-                                    serving real-time metrics to 500+ concurrent users.</li>
-                                <li>Designed RESTful APIs using Express.js and implemented WebSocket
-                                    connections for live metric updates.</li>
-                            </ul>
-                        </div>
-                    </div>
+                <div class="neo-card accent-pane bg-white p-8 space-y-4">
+                    <p class="neo-section-title">Certifications</p>
+                    <ul class="space-y-3 font-mono text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-star text-yellow-600"></i>
+                            Python for Data Structures
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-star text-yellow-600"></i>
+                            The Complete SQL Bootcamp
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-star text-yellow-600"></i>
+                            Statistics for Data Science
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-star text-yellow-600"></i>
+                            Python for Data Science & ML
+                        </li>
+                    </ul>
                 </div>
             </section>
 
-        </div>
+            <div class="accent-divider"><span>Collaborate</span></div>
 
-        <!-- Right Column (Sidebar) -->
-        <div class="space-y-8">
-
-            <!-- Education -->
-            <section class="neo-card p-6 bg-neo-yellow">
-                <h2 class="neo-section-title bg-white text-black">Education</h2>
-                <div class="border-l-4 border-black pl-4">
-                    <div class="font-bold text-xl">Bachelor of Technology</div>
-                    <div class="font-mono text-sm mb-2">Computer Science and Engineering</div>
-                    <div class="text-sm font-bold">JNTUA, Anantapuram</div>
-                    <div class="text-xs">2014 - 2018</div>
+            <!-- Contact Form -->
+            <section class="neo-card accent-pane bg-white p-8 space-y-6">
+                <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div>
+                        <p class="neo-section-title">Form UI</p>
+                        <h3 class="text-2xl font-black">Let’s build your next platform.</h3>
+                    </div>
+                    <p class="accent-pill bg-neo-blue/70">Response time &lt; 24 hrs</p>
                 </div>
+
+                <form class="grid gap-6 md:grid-cols-2 accent-form">
+                    <div class="flex flex-col gap-2">
+                        <label class="font-bold uppercase text-xs tracking-[0.3em]">Name</label>
+                        <input type="text" placeholder="Your name" class="bg-neo-bg" />
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="font-bold uppercase text-xs tracking-[0.3em]">Email</label>
+                        <input type="email" placeholder="you@example.com" class="bg-neo-bg" />
+                    </div>
+                    <div class="flex flex-col gap-2 md:col-span-2">
+                        <label class="font-bold uppercase text-xs tracking-[0.3em]">What do you need?</label>
+                        <textarea rows="4" placeholder="Share project scope, goals, or ideas…"
+                            class="bg-neo-bg"></textarea>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="button" class="accent-button bg-neo-green w-full md:w-auto">
+                            Send a ping
+                        </button>
+                    </div>
+                </form>
             </section>
 
-            <!-- Skills -->
-            <section class="neo-card p-6">
-                <h2 class="neo-section-title">Technical Skills</h2>
+        </main>
 
-                <div class="mb-4">
-                    <h3 class="font-bold mb-2 border-b-2 border-gray-200">Languages</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="neo-badge">Python</span>
-                        <span class="neo-badge">JavaScript</span>
-                        <span class="neo-badge">TypeScript</span>
-                        <span class="neo-badge">PowerShell</span>
-                    </div>
-                </div>
-
-                <div class="mb-4">
-                    <h3 class="font-bold mb-2 border-b-2 border-gray-200">Frameworks</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="neo-badge">FastAPI</span>
-                        <span class="neo-badge">Django</span>
-                        <span class="neo-badge">Flask</span>
-                        <span class="neo-badge">ReactJs</span>
-                        <span class="neo-badge">NextJs</span>
-                        <span class="neo-badge">ExpressJs</span>
-                        <span class="neo-badge">Pandas</span>
-                        <span class="neo-badge">NumPy</span>
-                        <span class="neo-badge">SQLModel</span>
-                    </div>
-                </div>
-
-                <div class="mb-4">
-                    <h3 class="font-bold mb-2 border-b-2 border-gray-200">Databases</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="neo-badge">PostgreSQL</span>
-                        <span class="neo-badge">MongoDB</span>
-                        <span class="neo-badge">Snowflake</span>
-                        <span class="neo-badge">MySQL</span>
-                        <span class="neo-badge">Redis</span>
-                    </div>
-                </div>
-
-                <div class="mb-4">
-                    <h3 class="font-bold mb-2 border-b-2 border-gray-200">Cloud & Tools</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="neo-badge">AWS</span>
-                        <span class="neo-badge">Azure</span>
-                        <span class="neo-badge">Docker</span>
-                        <span class="neo-badge">K8s</span>
-                        <span class="neo-badge">Terraform</span>
-                        <span class="neo-badge">Jenkins</span>
-                        <span class="neo-badge">Git</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Projects & Achievements -->
-            <section class="neo-card p-6">
-                <h2 class="neo-section-title bg-neo-green text-black">Achievements</h2>
-                <ul class="space-y-3 text-sm font-medium">
-                    <li class="flex items-start gap-2">
-                        <i class="fas fa-trophy mt-1 text-yellow-600"></i>
-                        <span>Microsoft Exchange Server automation solution.</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <i class="fas fa-trophy mt-1 text-yellow-600"></i>
-
-                        <span>Pragati Award (3x) & "Made a Difference" award at Wipro.</span>
-                    </li>
-                    <li class="flex items-start gap-2">
-                        <i class="fas fa-trophy mt-1 text-yellow-600"></i>
-
-                        <span>TCS Codevita national qualifier.</span>
-                    </li>
-                </ul>
-            </section>
-
-            <!-- Certifications -->
-            <section class="neo-card p-6">
-                <h2 class="neo-section-title">Certifications</h2>
-                <ul class="list-square list-inside text-sm font-mono space-y-1">
-                    <li class="flex items-start gap-2">
-
-                        <i class="fas fa-star mt-1 text-yellow-600"></i>
-                        <span>Python for Data Structures</span>
-
-                    </li>
-
-                    <li>
-                        <i class="fas fa-star mt-1 text-yellow-600"></i>
-                        <span>The Complete SQL Bootcamp</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-star mt-1 text-yellow-600"></i>
-                        <span>Statistics for Data Science</span>
-                    </li>
-                    <li>
-                        <i class="fas fa-star mt-1 text-yellow-600"></i>
-                        <span>Python for Data Science and ML</span>
-                    </li>
-                </ul>
-            </section>
-
-        </div>
-    </main>
-
-    <footer class="mt-12 text-center font-mono text-sm opacity-60 pb-8">
-        <p>Last updated: Nov 2025</p>
-    </footer>
+        <footer class="text-center font-mono text-sm opacity-70 pt-6 pb-10">
+            <p>Last updated · Nov 2025</p>
+        </footer>
+    </div>
 
     <!-- Custom Cursor Elements -->
     <div class="cursor-dot" data-cursor-dot></div>
